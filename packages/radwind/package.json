@@ -1,0 +1,49 @@
+{
+  "name": "radwind",
+  "version": "0.0.2",
+  "license": "MIT",
+  "scripts": {
+    "build": "bun run build.ts"
+  },
+  "exports": {
+    "./postcss": {
+      "types": "./build/postcss.plugin.d.ts",
+      "import": "./build/postcss.plugin.esm.js",
+      "require": "./build/postcss.plugin.cjs.js"
+    },
+    "./tailwind": "./build/tailwind.theme.css",
+    "./tailwind/plugin": {
+      "types": "./build/tailwind.plugin.d.ts",
+      "import": "./build/tailwind.plugin.esm.js",
+      "require": "./build/tailwind.plugin.cjs.js"
+    },
+    "./vite": {
+      "types": "./build/vite.plugin.d.ts",
+      "import": "./build/vite.plugin.esm.js",
+      "require": "./build/vite.plugin.cjs.js"
+    }
+  },
+  "dependencies": {
+    "@radix-ui/colors": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:types",
+    "postcss": "catalog:build",
+    "tailwindcss": "catalog:build",
+    "typescript": "catalog:build",
+    "vite": "catalog:build"
+  },
+  "peerDependencies": {
+    "postcss": "8.x",
+    "tailwindcss": "4.x",
+    "vite": "6.x"
+  },
+  "peerDependenciesMeta": {
+    "postcss": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
+  }
+}

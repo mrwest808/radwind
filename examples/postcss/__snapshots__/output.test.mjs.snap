@@ -1,0 +1,120 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+":root {
+  --background: var(--rx-gray-2);
+  --foreground: var(--rx-gray-12);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  border-color: var(--rx-amber-a5);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root, .light, .light-theme {
+  --rx-gray-2: #f9f9f9;
+  --rx-gray-12: #202020;
+  --rx-amber-a5: #f8cf0088;
+}
+
+.dark, .dark-theme {
+  --rx-gray-2: #191919;
+  --rx-gray-12: #eeeeee;
+  --rx-amber-a5: #fd8b0041;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+
+  @media (color-gamut: p3) {
+
+    :root, .light, .light-theme {
+      --rx-gray-2: color(display-p3 0.975 0.975 0.975);
+      --rx-gray-12: color(display-p3 0.125 0.125 0.125);
+      --rx-amber-a5: color(display-p3 0.933 0.796 0.004 / 0.475);
+    }
+
+    .dark, .dark-theme {
+      --rx-gray-2: color(display-p3 0.098 0.098 0.098);
+      --rx-gray-12: color(display-p3 0.933 0.933 0.933);
+      --rx-amber-a5: color(display-p3 1 0.592 0 / 0.24);
+    }
+  }
+}
+"
+`;
+
+exports[`excludeP3ColorGamut option 1`] = `
+":root {
+  --background: var(--rx-gray-2);
+  --foreground: var(--rx-gray-12);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  border-color: var(--rx-amber-a5);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root, .light, .light-theme {
+  --rx-gray-2: #f9f9f9;
+  --rx-gray-12: #202020;
+  --rx-amber-a5: #f8cf0088;
+}
+
+.dark, .dark-theme {
+  --rx-gray-2: #191919;
+  --rx-gray-12: #eeeeee;
+  --rx-amber-a5: #fd8b0041;
+}
+"
+`;
+
+exports[`custom selectors 1`] = `
+":root {
+  --background: var(--rx-gray-2);
+  --foreground: var(--rx-gray-12);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  border-color: var(--rx-amber-a5);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.custom-root {
+  --rx-gray-2: #f9f9f9;
+  --rx-gray-12: #202020;
+  --rx-amber-a5: #f8cf0088;
+}
+
+.custom-dark {
+  --rx-gray-2: #191919;
+  --rx-gray-12: #eeeeee;
+  --rx-amber-a5: #fd8b0041;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+
+  @media (color-gamut: p3) {
+
+    .custom-root {
+      --rx-gray-2: color(display-p3 0.975 0.975 0.975);
+      --rx-gray-12: color(display-p3 0.125 0.125 0.125);
+      --rx-amber-a5: color(display-p3 0.933 0.796 0.004 / 0.475);
+    }
+
+    .custom-dark {
+      --rx-gray-2: color(display-p3 0.098 0.098 0.098);
+      --rx-gray-12: color(display-p3 0.933 0.933 0.933);
+      --rx-amber-a5: color(display-p3 1 0.592 0 / 0.24);
+    }
+  }
+}
+"
+`;
+
+exports[`handles CSS with no variables 1`] = `"body { color: red; }"`;

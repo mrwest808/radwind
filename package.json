@@ -1,12 +1,44 @@
 {
-  "name": "radwind",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "bun --filter=radwind run build",
+    "build:next-tailwind": "bun --bun --filter=@examples/next-tailwind run build",
+    "build:postcss": "bun --bun --filter=@examples/postcss run build",
+    "build:vite": "bun --bun --filter=@examples/vite run build",
+    "dev:next-tailwind": "bun --bun --filter=@examples/next-tailwind run --elide-lines=0 dev",
+    "dev:vite": "bun --bun --filter=@examples/vite run dev",
+    "dev:vite-tailwind": "bun --bun --filter=@examples/vite-tailwind run dev",
+    "test": "bun --bun --filter=@examples/postcss run test",
+    "test:vite": "bun --bun --filter=@examples/vite run test",
+    "test:watch": "bun --bun --filter=@examples/postcss run test:watch",
+    "test:vite:watch": "bun --bun --filter=@examples/vite run test:watch"
   },
-  "license": "MIT",
-  "packageManager": "pnpm@10.11.0"
+  "workspaces": {
+    "packages": [
+      "examples/*",
+      "packages/*"
+    ],
+    "catalog": {
+      "@radix-ui/colors": "^3.0.0",
+      "next": "^15",
+      "react": "^19",
+      "react-dom": "^19"
+    },
+    "catalogs": {
+      "build": {
+        "@tailwindcss/postcss": "^4",
+        "@tailwindcss/vite": "^4",
+        "postcss": "^8.5.3",
+        "tailwindcss": "^4.1.8",
+        "typescript": "^5.7.4",
+        "vite": "^6.3.5"
+      },
+      "types": {
+        "@types/node": "^22.15.24"
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
 }
-

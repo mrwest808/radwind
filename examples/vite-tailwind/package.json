@@ -1,0 +1,16 @@
+{
+  "name": "@examples/vite-tailwind",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "catalog:build",
+    "radwind": "workspace:*",
+    "tailwindcss": "catalog:build",
+    "vite": "catalog:build"
+  }
+}

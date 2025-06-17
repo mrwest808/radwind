@@ -1,0 +1,12 @@
+{
+  "name": "@examples/postcss",
+  "private": true,
+  "scripts": {
+    "test": "bun test",
+    "test:watch": "bun test --watch"
+  },
+  "devDependencies": {
+    "postcss": "catalog:build",
+    "radwind": "workspace:*"
+  }
+}

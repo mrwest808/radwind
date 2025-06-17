@@ -1,0 +1,19 @@
+{
+  "name": "@examples/next-tailwind",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --turbopack",
+    "start": "next start"
+  },
+  "dependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "next": "catalog:"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "catalog:build",
+    "radwind": "workspace:*",
+    "tailwindcss": "catalog:build"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@examples/vite",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "bun test",
+    "test:watch": "bun test --watch"
+  },
+  "devDependencies": {
+    "radwind": "workspace:*",
+    "vite": "catalog:build"
+  }
+}
+
