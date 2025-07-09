@@ -23,7 +23,7 @@ const plugin: postcss.PluginCreator<PluginOptions> = (opts = {}) => {
   let uniqueVariables = new Set<string>();
 
   return {
-    postcssPlugin: "radwind-postcss-plugin",
+    postcssPlugin: "radwind/postcss",
     /**
      * Processes CSS declarations to find and track Radix color variable references
      */
