@@ -1,5 +1,5 @@
 import * as radixColors from "@radix-ui/colors";
-import postcss from "postcss";
+import postcss, { PluginCreator } from "postcss";
 import { denormalizeColorKey } from "./colors";
 
 /**
@@ -17,7 +17,7 @@ interface PluginOptions {
  * Creates a PostCSS plugin that handles Radix UI color variables
  * @param opts - Configuration options for the plugin
  */
-const plugin: postcss.PluginCreator<PluginOptions> = (opts = {}) => {
+function radwind(opts: PluginOptions = {}): postcss.AcceptedPlugin {
   const rootSelector = opts.rootSelector ?? ":root, .light, .light-theme";
   const darkModeSelector = opts.darkModeSelector ?? ".dark, .dark-theme";
   let uniqueVariables = new Set<string>();
@@ -123,8 +123,8 @@ const plugin: postcss.PluginCreator<PluginOptions> = (opts = {}) => {
       }
     },
   };
-};
+}
 
-plugin.postcss = true;
-
-export default plugin;
+export default Object.assign(radwind, {
+  postcss: true,
+}) as PluginCreator<PluginOptions>;

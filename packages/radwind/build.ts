@@ -19,13 +19,14 @@ for (const format of formats) {
   await Bun.build({
     entrypoints: [
       "./src/tailwind.plugin.ts",
+      "./src/postcss.plugin.load-config-fix.ts",
       "./src/postcss.plugin.ts",
       "./src/vite.plugin.ts",
     ],
     format,
     outdir: "build",
     target: "node",
-    naming: `[dir]/[name].${format}.[ext]`,
+    naming: `[dir]/[name].${format === "esm" ? "m" : ""}[ext]`,
   });
 }
 

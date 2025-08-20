@@ -1,6 +1,6 @@
 {
   "name": "radwind",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "license": "MIT",
   "scripts": {
     "build": "bun run build.ts"
@@ -12,19 +12,19 @@
   "exports": {
     "./postcss": {
       "types": "./build/postcss.plugin.d.ts",
-      "import": "./build/postcss.plugin.esm.js",
-      "require": "./build/postcss.plugin.cjs.js"
+      "import": "./build/postcss.plugin.mjs",
+      "require": "./build/postcss.plugin.load-config-fix.js"
     },
     "./tailwind": "./build/tailwind.theme.css",
     "./tailwind/plugin": {
       "types": "./build/tailwind.plugin.d.ts",
-      "import": "./build/tailwind.plugin.esm.js",
-      "require": "./build/tailwind.plugin.cjs.js"
+      "import": "./build/tailwind.plugin.mjs",
+      "require": "./build/tailwind.plugin.js"
     },
     "./vite": {
       "types": "./build/vite.plugin.d.ts",
-      "import": "./build/vite.plugin.esm.js",
-      "require": "./build/vite.plugin.cjs.js"
+      "import": "./build/vite.plugin.mjs",
+      "require": "./build/vite.plugin.js"
     }
   },
   "dependencies": {
